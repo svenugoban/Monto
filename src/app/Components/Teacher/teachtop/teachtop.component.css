@@ -1,0 +1,68 @@
+
+
+header{
+   
+    background-color: cornflowerblue;
+    
+    }
+
+.logo{
+    height: 35px;
+    padding: 5px;   
+    }
+
+
+.img1{
+    height: 20px; 
+   
+    }
+
+.img2{
+    height: 30px; 
+    padding: 4px;
+    width: 30px;
+    border-radius: 50%;
+    background-size: cover;
+    }
+
+body{
+    background-color: aliceblue;
+    }
+
+.menu{
+    background-color: aqua;
+    text-align: center;
+    }
+
+#font{
+    text-decoration-color: blueviolet
+    }
+
+
+
+
+
+
+
+/* header{
+   
+    background-color: cornflowerblue;
+    
+    }
+
+img{
+    height: 35px;
+    padding: 5px
+    }
+    
+.menu{
+    background-color: aqua;
+    text-align: center;
+    }
+
+body{
+    background-color: aliceblue;
+} */
+
+
+   

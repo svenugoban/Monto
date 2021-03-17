@@ -1,0 +1,62 @@
+<app-teachtop></app-teachtop>
+
+
+
+<body>
+<br><br><br><br><br>
+  
+
+<h2 style="text-align: center"> Student Attendance</h2><br>
+
+  <div style="text-align: right;padding-right: 130px;" >
+      <span class="glyphicon glyphicon-search"></span> <input type="text"   placeholder="Search by name" style="width: 200px;text-align: center;" [(ngModel)]="searchterm"><br><br>
+  </div>
+
+
+
+
+<form #f="ngForm" (submit)="OnSubmit()">
+      <div style="padding-left: 130px;padding-right: 130px">
+
+
+        
+          <ul class="list-group">
+
+            <div *ngIf="invalidattend">
+              Attendance sheet still not Available
+            </div>
+
+            <div *ngIf="validattend">
+              <div *ngFor="let sl of studattend | studentfilter : searchterm; let i = index;">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span>
+                    <img class="img-thumbnail img1" src="assets\img\Studentinfo.jpg">  
+                    <label class="studentName" for="" style="padding-left: 40px">{{sl.studentname}}</label>
+                  </span>
+                  <span style="padding-right: 25px">
+                      <label class="switch" style="padding-left: 30px" >
+                      <input type="checkbox" class="primary" value={{i}} [(ngModel)]="sl.present"    [name]="sl.studentname" [checked]="sl.present">
+                      <span class="slider round"></span>
+                      </label>
+                  </span>
+              </li>
+              </div>
+              
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+               <span>
+                 <span></span>
+               </span>
+               <span style="padding-right: 20px"><button type="submit" value="submit" class="btn btn-primary" > Submit</button></span>
+              </li>
+
+            </div>
+
+
+
+          </ul>
+            
+      </div>
+      
+</form>
+<app-footeral></app-footeral>
+</body>

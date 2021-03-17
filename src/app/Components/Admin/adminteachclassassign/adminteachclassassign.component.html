@@ -1,0 +1,93 @@
+<app-admintop></app-admintop>
+
+<body>
+  <br><br><br><br>
+
+  <h2 style="text-align: center">Assign Teacher to Classes</h2><br>
+
+
+    <div style="text-align: right;padding-right: 130px;" >
+            <span class="glyphicon glyphicon-search"></span> <input type="text"   placeholder="Search by name" style="width: 200px;text-align: center;" [(ngModel)]="tsearchterm"><br><br>
+    </div>
+
+    <form #f="ngForm" (submit)="OnSubmit(f)">
+            <div style="padding-left: 130px;padding-right: 130px">
+                
+                <ul class="list-group">
+                    <div *ngFor="let tl of teachlist | teacherfilter : tsearchterm; let i = index;  ">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            <span>
+                                <img class="img-thumbnail img1" src="assets\img\teacher.png">  
+                                <label class="studentName" for="" style="padding-left: 40px">{{tl.teacher_name}}</label>
+                            </span>
+                            <span style="padding-right: 25px">
+                                <label style="padding-left: 30px" >
+                                        <input type="text" list="Classroom" class="form-control" [(ngModel)]="tl.classroom" name="tl.teacher_name" #studentname="ngModel"  >
+                                        <div  >
+                                            <datalist id="Classroom">
+                                            <option *ngFor="let cl of classes;">
+                                                {{cl}}
+                                            </option>
+                                            </datalist>
+                                        </div>    
+                                </label>
+                            </span>
+                
+                            
+                        </li>
+                    </div>
+
+
+
+
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                     <span>
+                       <span></span>
+                     </span>
+                     <span style="padding-right: 20px"><button  class="btn btn-primary" [disabled]="f.invalid"> Assign</button></span>
+                    </li>
+                    <br>
+
+                    <div *ngIf="validassign" style="padding-left: 40px;padding-right: 40px">
+
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Teachers are assigned to classes <strong>Successfully</strong> 
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                    </div>
+
+                </ul>
+
+                
+                    
+                    
+
+
+                    
+            </div>
+                     
+        
+
+    </form>
+        
+            
+                <div *ngIf="validassign" style="padding-left: 200px;padding-right: 200px">
+
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <button class="btn btn-outline-info btn-lg btn-block" (click)="issueattendancesheet()">Issue the Attend sheet</button>
+                    </li>
+
+                </div>
+            
+
+
+
+
+
+  <app-footeral></app-footeral>       
+
+</body>

@@ -1,0 +1,158 @@
+h2{
+  text-align: center;
+  color: darkgoldenrod;
+}
+
+h4{
+  text-align: center;
+  color: #8b0000;
+  font-size: 250%;
+}
+
+p{
+  text-align: center;
+  font-size: 200%;
+}
+
+/* body{
+  background-color: aliceblue;
+} */
+
+img{
+  
+  text-align: center;
+}
+
+footer{
+  background-image:linear-gradient(  #5372d8, #1db8d3);
+  -webkit-text-fill-color:blue;
+  text-align: center;
+  padding: 5px;
+  }
+
+.img1{
+  background-image: url(../../../../assets/img/teacher1.jpg);
+ height: 550px;
+ width: 100%;
+ 
+}
+  
+
+.bb-hero .body-block {
+  display: flex;
+}
+
+.bb-basic_text {
+  color: #76757b;
+  font-size: 16px;
+}
+.bb--margin-top-extra {
+  padding-top: 60px;
+}
+.bb--margin-bottom-default {
+  padding-bottom: 30px;
+}
+
+
+.building-block {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.bb--margin-top-default{
+  padding-top:30px
+}
+
+.body-block{
+  margin-top:10vh
+}
+
+/* .angled-edge--top {
+  -webkit-clip-path: polygon(0 6vw,100% 0,100% 100%,0 100%);
+  clip-path: polygon(0 6vw,100% 0,100% 100%,0 100%);
+}
+.angled-edge--bottom {
+  -webkit-clip-path: polygon(0 0,100% 0,100% calc(100% - 6vw),0 100%);
+  clip-path: polygon(0 0,100% 0,100% calc(100% - 6vw),0 100%);
+} */
+
+.multicolumn-grid{
+  font-size:16px;
+  color:#76757b;
+}
+
+.wrapper{
+  padding-top:20px;
+  padding-bottom:20px
+}
+
+
+
+
+.grid__column--icon-text{
+  border-right:1px solid #76757b;
+  font-size:18px
+}
+
+.grid{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content:flex-start;
+  align-items:stretch;
+  margin:0 -5px
+}
+
+.grid__item p{
+  font-size: 16px;
+}
+
+.grid__item h3{
+  color:#4857b7;
+  font-weight: 700;
+}
+
+
+.grid__column{
+  width:100%;
+  position:relative;
+  padding:25px;
+}
+
+
+
+.u-size-1of3--md{  
+  width:33.33333%
+}
+
+/* .grid__item--icon-text{
+  display:flex;
+  align-items:flex-start;
+} */
+
+
+
+.u-text-center{
+  text-align: center;
+  }
+  
+
+.angled-edge--bottom.angled-edge--top {
+  -webkit-clip-path: polygon(0 6vw,100% 0,100% calc(100% - 6vw),0 100%);
+  clip-path: polygon(0 6vw,100% 0,100% calc(100% - 6vw),0 100%);
+}
+
+
+
+
+
+/*---------------------------------------------------------------------------*/
+
+
+@media screen and (min-width:700px){.bb--margin-bottom-extra{padding-bottom:80px}}
+
+
+
+
+
+
+

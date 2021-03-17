@@ -1,0 +1,155 @@
+<app-admintop></app-admintop>
+<body>
+<br><br><br><br><br>
+
+
+<h2 style="text-align: center">Student List</h2><br>
+
+
+    <div style="text-align: right;padding-right: 130px;" >
+            <span class="glyphicon glyphicon-search"></span> <input type="text"   placeholder="Search by name" style="width: 200px;text-align: center;" [(ngModel)]="searchterm"><br><br>
+    </div>
+
+
+    <div *ngFor="let sl of studlist | studentfilter : searchterm  ">
+        <div style="padding-left: 130px;padding-right: 130px">
+            
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <span class="row" style="padding: 10px;">
+                        <img class="img-thumbnail img1" [src]= ImageUrlch   >
+                        <span class="studentName" style="padding-left: 40px">
+                        <div class="row">
+                            <div class="col-sm">
+                                Student id<br>
+                                Name<br>
+                                
+                            </div>
+                            <div>
+                            : {{sl.studentid}}<br>
+                            : {{sl.studentname}}
+                            
+                            
+                        </div>
+                        </div>
+                        </span>
+                    
+                    </span>
+
+                    
+                    <span class="badge-pill"  ><a href="#aboutModal" data-toggle="modal" data-target="#myModal" style="text-decoration: none" (click)="viewprofile(sl.studentname)"> View profile</a></span>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4>Student Profile</h4>
+                                        </div>
+                                    <div class="modal-body">
+                                        <div style="text-align: center;">
+                                            <img class="img-thumbnail" src="assets\img\Studentinfo.jpg" name="aboutme" width="140" height="140"><br><br>
+                                        </div>
+                                        <hr>
+
+
+                                    <div *ngIf="studobject" class ="value" >
+                                        <div class="row" style="padding-left: 80px;">
+                                            <div class="col">
+                                                <label>Student Id</label>
+                                            </div>
+                                            <div class="col" style="padding-left: 40px;">
+                                                <p> {{studobject.studentid}}<br></p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-left: 80px;">
+                                            <div class="col">
+                                                <label>Student Name</label>
+                                            </div>
+                                            <div class="col" style="padding-left: 40px;">
+                                                <p> {{studobject.studentname}}<br></p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-left: 80px;">
+                                            <div class="col">
+                                                <label>Address</label>
+                                            </div>
+                                            <div class="col" style="padding-left: 40px;">
+                                                <p> {{studobject.address}}<br></p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-left: 80px;">
+                                            <div class="col">
+                                                <label>Gender</label>
+                                            </div>
+                                            <div class="col" style="padding-left: 40px;">
+                                                <p> {{studobject.sex}}<br></p>
+                                            </div>
+                                        </div>
+                                        <div class="row" style="padding-left: 80px;">
+                                            <div class="col">
+                                                <label>Date of birth</label>
+                                            </div>
+                                            <div class="col" style="padding-left: 40px;">
+                                                <p> {{studobject.dob}}<br></p>
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+                            
+                                        
+                                        <div style="text-align: center">
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class = "row">
+                                          <div class="col">
+                                            <button type="button" class="btn btn-secondary btn-block" data-dismiss="modal">Close</button>
+                                          </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+
+                    </div>  
+                    
+                    
+
+
+
+                </li>
+            </ul>
+
+            
+            
+                
+
+
+                
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+
+<app-footeral></app-footeral>          
+</body>

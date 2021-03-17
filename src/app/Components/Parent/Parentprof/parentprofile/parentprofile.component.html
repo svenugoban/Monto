@@ -1,0 +1,102 @@
+<body>
+
+    <app-parenttop></app-parenttop><br><br><br><br>
+      
+    <div class="container emp-profile">
+        <form method="POST">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img [src]= ImageUrl alt=""/>
+                        <br>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5>
+                                    {{user}}
+                                </h5>
+                                <h6>
+                                   Parent
+                                </h6>
+   
+                    </div>
+                </div>
+                <div class="col-md-2">
+                  <a class="badge badge-secondary" value="Edit Profile" href="  " routerLink="/editparentprofile" >Edit Profile</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                        <br>
+                        <h5 style="padding-left: 40px;">Child Image</h5>
+                        <div class="profile-img">
+                            <img [src]=ImageUrlch alt=""/>
+                            
+                        </div>
+
+                    
+                </div>
+                <div class="col-md-8" class="valuecolor">  
+                 
+                        
+                        <div class="row" >
+                            <div class="col">
+                                <label>Child Id</label>
+                            </div>
+                            <p>{{childobject.studentid}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Child Name</label>
+                            </div>
+                            <p>{{childobject.studentname}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Child Date of Birth</label>
+                            </div>
+                            <p>{{childobject.dob}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Gender</label>
+                            </div>
+                            <p>{{childobject.sex}}</p> 
+                        </div>
+                        
+                        <div class="row" >
+                            <div class="col">
+                                <label>Address</label>
+                            </div>
+                            <p>{{childobject.address}}</p> 
+                        </div>
+
+                       
+                   
+
+                      
+                       
+                    
+                </div>
+            </div>       
+         <hr>
+        </form>  
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                  
+    <app-footeral></app-footeral>       
+    </body>

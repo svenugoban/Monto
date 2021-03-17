@@ -1,0 +1,102 @@
+<body>
+
+    <app-teachtop></app-teachtop><br><br><br><br>
+      
+    <div class="container emp-profile">
+        <form method="POST">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img [src]=ImageUrl  alt=""/>
+                        
+                            
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5>
+                                    {{user}}
+                                </h5>
+                                <h6>
+                                   Teacher
+                                </h6>
+                                
+                        
+                    </div>
+                </div>
+                <div class="col-md-2">
+                  <a class="badge badge-secondary" value="Edit Profile" href="" routerLink="/editteachprof" >Edit Profile</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+
+                    
+
+                    
+                </div>
+                <div class="col-md-8" class="valuecolor">  
+                 
+                        <div class="row" >
+                            <div class="col">
+                                <label>Your Id</label>
+                            </div>
+                            <p>{{teachobject.teacher_id}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Name</label>
+                            </div>
+                            <p>{{teachobject.teacher_name}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Gender</label>
+                            </div>
+                            <p>{{teachobject.gender}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Date of Birth</label>
+                            </div>
+                            <p>{{teachobject.dob}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Qulaification</label>
+                            </div>
+                            <p>{{teachobject.qualification}}</p> 
+                        </div>
+
+                        <div class="row" >
+                            <div class="col">
+                                <label>Address</label>
+                            </div>
+                            <p>{{teachobject.address}}</p> 
+                        </div>
+
+                        
+                </div>
+            </div>       
+         <hr>
+        </form>  
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                  
+<app-footeral></app-footeral>       
+</body>

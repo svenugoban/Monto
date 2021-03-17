@@ -1,0 +1,36 @@
+hr{
+    margin: 0 0 0 0;
+    border-color: rgb(160, 214, 201);
+    margin-left: 45px;
+    margin-right: 45px;
+    
+}
+
+h3 {
+  
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}
+
+body{
+    margin-top: 40px;
+    background-color: aliceblue;
+    text-align: center;
+    
+}
+
+img{
+    height: 50px;
+}
+
+a{
+    -webkit-text-fill-color: rgb(119, 119, 119);
+    text-decoration: none;
+}
+
+a:hover{
+    -webkit-text-fill-color: rgb(107, 70, 70)
+}

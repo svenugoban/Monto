@@ -1,0 +1,112 @@
+<app-teachtop></app-teachtop>
+
+
+
+<body>
+  <br><br><br><br>
+
+  <div class="row">
+    <div class="col-8">
+        <div class="fbgcolor">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+              <h3 style="text-align: center">Add a newsfeed</h3><br>
+
+
+                  <div class="form-group" [class.has-error]="Title.invalid && Title.touched" [class.has-success]="Title.valid">
+                    <label for = "title">Title of the event</label>
+                    <input type="text" class="form-control" [(ngModel)]="form.name" name="name" #Title="ngModel" required>
+                    <div class="help-block" *ngIf="Title.invalid && Title.touched">
+                      Title is required
+                    </div>
+                  </div>
+
+                  
+                  <div class="form-group" [class.has-error]="Image.invalid && Image.touched" [class.has-success]="Image.valid">
+                      <label for = "image">Event Image </label>
+                      <input type="file" (change)="handleFileInput($event.target.files)" class="form-control" [(ngModel)]="form.image" name="image" #Image="ngModel" accept="image/" required>
+                      <div class="help-block" *ngIf="Image.invalid && Image.touched">
+                          Image file is required
+                      </div>
+                  </div>
+
+                  <div class="form-group" [class.has-error]="Description.invalid && Description.touched" [class.has-success]="Description.valid">
+                      <label for = "discription">Discription</label>
+                      <textarea type="" class="form-control" rows=4 [(ngModel)]="form.description" name="description" #Description="ngModel" required></textarea>
+                      <div class="help-block" *ngIf="Description.invalid && Description.touched">
+                          Description is required
+                        </div>
+                  </div>
+
+                  
+
+                  
+                  <!-- <div class="form-group" [class.has-error]="puserName.invalid && puserName.touched" [class.has-success]="puserName.valid">
+                      <label for = "puser-name">Parent User Name</label>
+                      <input type="text" class="form-control" [(ngModel)]="form.pusername" name="pusername" #puserName='ngModel' required>
+                      <div class="help-block" *ngIf="puserName.invalid && puserName.touched">
+                        Parent user name is required
+                      </div>
+                  </div> -->
+
+                  
+
+                  <button  class="btn btn-info" [disabled]="f.invalid">Create</button>
+                  <div *ngIf="invalidsubmit">
+                    <div class="has-error">
+                      
+                    </div>
+                  </div>
+
+            </form>
+        </div>
+    </div>
+   
+    <div class="col-3" style="padding-top: 105px;">
+
+      <img class="img-thumbnail" [src] = ImageUrl >
+
+    </div>
+  </div>
+  
+
+
+  
+  <!-- <button class="btn btn-secondary" data-toggle="modal"  data-target="#exampleModalCenter">Register </button> -->
+        
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Sucessfully Registered !</h5>
+                  
+               
+              </div>
+              <div class="modal-body">
+                <br>
+
+                <label>
+
+                </label>
+
+
+                <br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+<app-footeral></app-footeral>
+</body>

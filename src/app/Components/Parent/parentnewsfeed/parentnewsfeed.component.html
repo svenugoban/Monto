@@ -1,0 +1,44 @@
+<app-parenttop></app-parenttop>
+
+<body>
+<br><br><br><br><br>
+
+
+    <div class="container">
+                    <div *ngFor="let nf of newsfeeds" class="card text-center" style="padding: 10px;">
+                      <div class="content">
+                          <div class="card-header" >
+                            Title of event
+                          </div>
+                          <div class="card-body">
+                            <div class="image">
+                              <img class="image" src="{{nf.imageUrl}}">
+                            </div>
+                            <hr>
+                            <div class="discription">
+                                {{nf.description}}
+                            </div>
+                          </div>
+                          <div class="card-footer">
+                            <div class="row">
+                              <div class="col-md-8">
+                                <img class="like" style="text-align: left;" src="\assets\img\like.png">
+                              </div>
+                              <div class="col-md-4">
+                                <p class="datetime"> Date Time </p>
+                              </div>
+                            </div>    
+                          </div>
+                      </div>
+                    </div>
+
+                
+
+    </div>
+        
+    
+
+    
+
+<app-footeral></app-footeral>
+</body>

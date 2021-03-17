@@ -1,0 +1,147 @@
+<body>
+
+
+    <header>
+        <img src="assets\img\Logo.png">  
+    </header>
+    
+
+      <form #f="ngForm"  (ngSubmit)="onsignupform(f)">
+        <div style="padding-left: 500px; padding-right: 500px;">
+          <div class="fbgcolor">
+            <br>
+
+            <div class="form-group" [class.has-error]="userName.invalid && userName.touched" [class.has-success]="userName.valid">
+              <label for="user-name">User Name</label>
+              <input type="text" class="form-control" [(ngModel)]="form.username" name="username" #userName="ngModel" required> 
+            <span class="help-block" *ngIf="userName.invalid && userName.touched">
+              User name is required
+            </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="Email.invalid && Email.touched" [class.has-success]="Email.valid">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" [(ngModel)]="form.email" pattern="^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$" name="email" #Email="ngModel" required >
+              <span class="help-block" *ngIf="Email.errors?.required && Email.touched">
+                Email is required
+              </span>
+              <span class="help-block" *ngIf="Email.errors?.pattern && Email.touched">
+                Email is invalid
+              </span>
+            </div>
+
+
+            <div class="form-group" [class.has-error]="password.invalid && password.touched" [class.has-success]="password.valid">
+              <label for="pwd">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="form.password" name="password" #password="ngModel"   required>
+              <span class="help-block" *ngIf="password.invalid && password.touched">
+                Password is required
+              </span>
+            
+            </div>
+      
+            <div class="form-group" [class.has-error]="cpassword.invalid && cpassword.touched" [class.has-success]="cpassword.valid">
+              <label for="confirmpwd">Confirm Password</label>
+              <input type="password" class="form-control" [(ngModel)]="form.confirmpassword" #cpassword="ngModel" name=confirmpassword required appConfirmEqualValidator="password">
+              <span class="help-block" *ngIf="cpassword.errors?.required && cpassword.touched">
+                Confirm Password is required
+              </span>
+              <span class="help-block" *ngIf="cpassword.errors?.notEqual && cpassword.touched && !cpassword.errors?.required">
+                Password didn't match
+              </span>
+            </div>
+        
+  <!-- 
+            <div class="form-group" [class.has-error]="user.invalid && user.touched" [class.has-success]="user.valid">
+            <label for="user" >User</label>
+            <select class="form-control" [(ngModel)]="form.user" name="user" #user="ngModel" required>
+                
+                  <option value="parent">
+                    Parent
+                  </option>
+                  <option value="teacher">
+                    Teacher
+                  </option>
+            </select>
+            <span class="help-block" *ngIf="user.invalid && user.touched">
+              Confirm Password is required
+            </span>
+            </div> -->
+
+            <button  class="btn btn-primary" [disabled]="f.invalid" data-toggle="modal" data-target="#Generatecodeask">Sign up</button>
+            <div *ngIf="invalidsignup">
+              <div class="has-error">
+                {{message}}
+              </div>
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+      </form>
+
+
+
+
+
+
+      
+      
+      <!-- Modal -->
+
+
+    
+      <div class="modal fade" id="Generatecodeask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+
+         
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Enter your Generate code</h5>
+                
+              </div>
+              <div class="modal-body">
+              <br>
+              
+                  <div class="form-group" [class.has-error]="generateCode.invalid && generateCode.touched" [class.has-success]="generateCode.valid">
+                      <label for="generate-code">Generate code</label>
+                      
+                      <input type="text" class="form-control" [(ngModel)]="generatecode" [value]="generatecode" (input) = "generatecode = $event.target.value"  #generateCode="ngModel" required> 
+                     <span class="help-block" *ngIf="generateCode.invalid && generateCode.touched">
+                       Generate code is required
+                     </span>
+                     <p><br>Your account is created<br>
+                     Please enter you generate code to connect with your child detail</p>
+                    </div>
+
+
+              <br>
+              </div>
+              <div class="modal-footer">
+                
+                  <button type="button" class="btn btn-primary" [disabled]="generateCode.invalid" (click)="display()" data-dismiss="modal">Connect</button>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    
+ 
+
+     
+  
+
+
+      
+
+
+
+
+
+
+
+
+</body>

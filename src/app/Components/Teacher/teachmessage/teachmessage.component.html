@@ -1,0 +1,125 @@
+<app-teachtop></app-teachtop>
+
+<body>
+        <br><br><br><br><br>
+        <div class="back">
+            <br>
+            <h3 class=" text-center">Messaging</h3>
+            <br>
+           
+                <div class="container"  >
+                        <div class="messaging">
+            
+                            <div class="inbox_msg">
+                                
+                                <div class="inbox_people">
+            
+                                    <div class="headind_srch">
+                                        <div class="recent_heading">
+                                            <h4>Recent</h4>
+                                        </div>
+                                        <div class="srch_bar">
+                                            <div class="stylish-input-group">
+                                            <input type="text" class="search-bar"  placeholder="Search" [(ngModel)]="searchterm" >
+                                            <span class="input-group-addon">
+                                            <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                                            </span> 
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <div class="inbox_chat">
+                                        <div *ngFor="let sl of studlist | studentfilter : searchterm">
+                                        
+                                        <a (click)= "selectStudentbox(sl.studentname)">
+                                            <div class="chat_list">
+                                                <div class="chat_people">
+                                                    <div class="chat_img"> 
+                                                        <img src="../../../../assets/img/Studentinfo.jpg" alt="sunil"> 
+                                                    </div>
+                                                    <div class="chat_ib">
+                                                        <h5> {{sl.studentname}} <span class="chat_date"></span></h5>
+                                                        <br><br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+            
+                                <div class="mesgs">
+                                        
+                                            <div class="mesgsheadind_srch">
+                                                <div class="row">
+                                                    <img class="mesgsheadimg" src = "../../../../assets/img/Studentinfo.jpg"  alt="sunil"> 
+                                                    <b> <pre>   {{messageheadname}}</pre></b>
+                                                </div>
+                                            </div><br>
+                
+                                            <div class="msg_history">
+                                                <div class="overflow-auto">
+                                                
+                                                
+                                                    <div  *ngFor="let ml of messagelist">
+                                                        <div class="outgoing_msg">
+                                                        <div class="sent_msg">
+                                                            <p>{{ml.message}}</p>
+                                                            <span class="time_date">  {{ml.time}}    | {{ml.date}} </span> </div>
+                                                        </div>
+                                                    </div>
+                                               
+
+
+                                                </div>
+                                            </div>
+
+                                       
+
+                                        <form #f="ngForm" (ngSubmit) = "onSubmit(f)">
+                                            <div class="type_msg">
+                                                <div class="input_msg_write">
+                                                        <div class="form-group" [class.has-error]="address.invalid && address.touched" [class.has-success]="address.valid">
+                                                                <input type="text" class="form-control" [(ngModel)]="form.message" name="message" #address="ngModel" placeholder="Type a message" required>
+                                                        </div>
+                                                    <button class="msg_send_btn" style="border-block: none;" [disabled]= "f.invalid" >></button>
+                                                </div>
+                                            </div>
+                                       </form>
+            
+                                </div>
+            
+                            </div>
+            
+                            
+                            
+                            
+                            
+                            
+                        </div>
+            
+                </div>
+            
+        </div>
+       
+        
+    
+<app-footeral></app-footeral>
+</body>
+
+
+
+<!-- <div class="chat_list active_chat">
+                                                <div class="chat_people">
+                                                    <div class="chat_img"> 
+                                                        <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> 
+                                                    </div>
+                                                    <div class="chat_ib">
+                                                        <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                                                        <p>Test, which is a new approach to have all solutions  astrology under one roof.</p>
+                                                    </div>
+                                                </div>
+                                        </div>
+                                        -->

@@ -1,0 +1,73 @@
+<app-parenttop></app-parenttop>
+
+<body>
+<br><br><br><br>
+
+
+           
+<h2 style="text-align: center">Notifications</h2><br>
+
+
+    <div>
+
+        <div style="padding-left: 240px;padding-right: 240px">
+            
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                
+                    <span class="row" style="padding: 10px;">
+                        
+                        <span class="studentName" style="padding-left: 20px">
+                            <div class="row">
+                                <div class="col-sm" style = "padding-left: 400px;color: rgb(209, 69, 69); font-weight: bold; font-family: 'Times New Roman', Times, serif;font-size: 20px;">
+                                <p></p>
+                                Meds Information<br><br>
+                                
+                                </div> 
+                            </div>
+                            
+                            <div class="row" style="padding-left: 20px;"  *ngFor="let md of meds">
+                                <div class="col-sm">
+                                    Date : {{md.date}}<br>
+                                    Time : {{md.time}}<br>
+                                    Incident : {{md.incident}}<br>
+                                    First Aid : {{md.firstaid}}
+                                    <br>
+                                    <hr>
+                                    <br>
+                                
+                                </div> 
+                            </div>
+                            
+
+                        </span>
+
+                        
+                    </span>
+                   
+                    <span class="studentName" style="padding-left: 20px">
+                            <div class="row">
+                                <div class="col-sm">
+                                 
+                                </div> 
+                            </div>
+                        </span>                    
+                </li>    
+            </ul>       
+        </div>
+    </div>
+
+
+
+
+
+           
+
+
+
+
+        
+    
+
+<app-footeral></app-footeral>
+</body>

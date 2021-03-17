@@ -1,0 +1,51 @@
+<app-teachtop></app-teachtop>
+
+<body>
+  <br><br><br><br>
+  
+  <div class="fbgcolor">
+
+      <form #f="ngForm" (ngSubmit)="onmedsform(f)">
+        <h2 style="text-align: center"><img src="assets\img\medical.png" class=img1 >Medical Issue</h2><br>
+
+
+            <div class="form-group" [class.has-error]="studentname.invalid && studentname.touched" [class.has-success]="studentname.valid">
+              <label for = "student-name">Student Name</label>
+              <input type="text" list="students" class="form-control" [(ngModel)]="form.studentname" name="studentname" #studentname="ngModel"  required>
+              <datalist id="students">
+                <option *ngFor="let sl of studlist" >
+                  {{sl.studentname}}
+                </option>
+
+              </datalist>
+            </div>
+
+            
+            <div class="form-group" [class.has-error]="incident.invalid && incident.touched" [class.has-success]="incident.valid">
+                <label for = "incident">Incident</label>
+                <textarea rows = "3" class="form-control" [(ngModel)]="form.incident" name="incident" #incident="ngModel" required></textarea>
+                
+            </div>
+
+            <div class="form-group" [class.has-error]="firstaid.invalid && firstaid.touched" [class.has-success]="firstaid.valid">
+                <label for = "first-aid">First Aid</label>
+                <textarea rows = "3" class="form-control" [(ngModel)]="form.firstaid" name="firstaid" #firstaid="ngModel" required></textarea>
+                
+            </div>
+
+            
+
+            
+            
+
+            
+
+            <button class="btn btn-danger" [disabled]="f.invalid">Sent</button>
+      </form>
+  </div>
+
+
+
+
+<app-footeral></app-footeral>
+</body>

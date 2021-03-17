@@ -1,0 +1,162 @@
+  <app-admintop></app-admintop>
+  <body>
+      <br><br><br><br>
+  
+    
+      <div class="fbgcolor">
+        <form #f="ngForm"  (ngSubmit)="onsignupform(f)">
+
+            <br>
+
+            <div class="form-group" [class.has-error]="userName.invalid && userName.touched" [class.has-success]="userName.valid">
+              <label for="user-name">User Name</label>
+              <input type="text" class="form-control" [(ngModel)]="form.username" name="username" #userName="ngModel" required> 
+            <span class="help-block" *ngIf="userName.invalid && userName.touched">
+              User name is required
+            </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="Email.invalid && Email.touched" [class.has-success]="Email.valid">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" [(ngModel)]="form.email" pattern="^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$" name="email" #Email="ngModel" required >
+              <span class="help-block" *ngIf="Email.errors?.required&& Email.touched">
+                Email is required
+              </span>
+              <span class="help-block" *ngIf="Email.errors?.pattern && Email.touched">
+                Email is invalid
+              </span>
+            </div>
+
+            <div class="form-group" [class.has-error]="password.invalid && password.touched" [class.has-success]="password.valid">
+              <label for="pwd">Password</label>
+              <input type="password" class="form-control" [(ngModel)]="form.password" name="password" #password="ngModel"   required>
+              <span class="help-block" *ngIf="password.invalid && password.touched">
+                Password is required
+              </span>
+            
+            </div>
+
+            <div class="form-group" [class.has-error]="cpassword.invalid && cpassword.touched" [class.has-success]="cpassword.valid">
+              <label for="confirmpwd">Confirm Password</label>
+              <input type="password" class="form-control" [(ngModel)]="form.confirmpassword" #cpassword="ngModel" name=confirmpassword required appConfirmEqualValidator="password">
+              <span class="help-block" *ngIf="cpassword.errors?.required && cpassword.touched">
+                Confirm Password is required
+              </span>
+              <span class="help-block" *ngIf="cpassword.errors?.notEqual && cpassword.touched && !cpassword.errors?.required">
+                Password didn't match
+              </span>
+            </div>
+        
+
+            <button  class="btn btn-primary" [disabled]="f.invalid" >Sign up</button>
+
+           
+            <div *ngIf="invalidsignup">
+              <div class="has-error">
+                {{message}}
+              </div>
+            </div>
+        
+        </form>
+
+
+        <div *ngIf="validsignup" style="padding-left: 550px;">
+            <button class="btn btn-info" data-toggle="modal" data-target="#Generatecodeask">Next</button>
+          </div> 
+
+      </div>
+        
+
+            <!-- Modal -->
+            
+            <div class="modal fade" id="Generatecodeask" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+
+                    <div *ngIf="validconnect">
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                          Account and Details are <strong>Connected</strong> 
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                    </div>
+
+        
+                
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Generate code</h5>
+                        
+                      </div>
+                      <div class="modal-body">
+                      <br>
+                      
+                          <div class="form-group" [class.has-error]="generateCode.invalid && generateCode.touched" [class.has-success]="generateCode.valid">
+                            <label for="generate-code">Generate code</label>
+                              
+                            <input type="text" class="form-control" [(ngModel)]="gform.generatecode" [value]=Generatecode name="generatecode"  #generateCode="ngModel" > 
+                            <span class="help-block" *ngIf="generateCode.invalid && generateCode.touched">
+                              Generate code is required
+                            </span>
+                            <p><br>Account is created<br>
+                            Click connect teacher account with teacher detail</p>
+                            </div>
+        
+        
+                      <br>
+                      </div>
+                      <div class="modal-footer">
+                        
+                          <button type="button" class="btn btn-primary" [disabled]="generateCode.invalid" (click)="gSubmit()"  data-dismiss="modal">Connect</button>
+                          
+                      </div>
+                    </div>
+                  
+                </div>
+              </div>
+          
+        
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"> Signup Sucessful ! </h5>
+        </div>
+        <div class="modal-body"><br>
+          <P>Teacher Account is created</P>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<app-footeral></app-footeral>
+</body>

@@ -1,0 +1,43 @@
+body{
+    background-color: aliceblue;
+    }
+
+.image{
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    padding: 5px;
+    
+    padding-bottom: 20px;
+    
+    }
+
+.like{
+    height: 35px;
+    margin-left: -400px;
+    
+    }
+
+.datetime{
+    padding-top: 5px;
+    -webkit-text-fill-color: blue
+    }
+
+.discription{
+    padding: 20px;
+    text-align: justify;
+    font-size: 20px;
+    background-color: rgb(226, 231, 235);
+}
+
+.card-header{
+    text-align: left;
+}
+
+.card{
+    margin-top: 10px;
+}
+
+.content{
+    padding: 8px;
+}

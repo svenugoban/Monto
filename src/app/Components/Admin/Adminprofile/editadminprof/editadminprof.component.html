@@ -1,0 +1,196 @@
+<body>
+
+    <app-teachtop></app-teachtop><br><br><br><br>
+      
+    <div class="container emp-profile">
+        <form #f='ngForm' (ngSubmit)="onSubmit(f)">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img [src]= ImageUrl alt=""/>
+                        <div class="file btn btn-lg btn-primary">
+                            Change Photo
+                            <input type="file" (change)="handleFileInput($event.target.files)" class="form-control" [(ngModel)]="form.image" name="image" #Image="ngModel" accept="image/"  />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                                <h5>
+                                    {{user}}
+                                </h5>
+                                <h6>
+                                   Admin
+                                </h6>
+                                <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                        
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-8" class="valuecolor">  
+  
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <label>Teacher Id</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <p>01</p>
+                              </div>
+                          </div>
+                 
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label>Teacher Name</label>
+                          </div>
+                          <div class="col-md-6">
+                                  <p>teacher1</p>
+                          </div>
+                      </div>
+  
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label>E mail</label>
+                          </div>
+                          <div class="col-md-6">
+                              <p>email</p>
+                          </div>
+                      </div>
+  
+                      <div class="row">
+                              <div class="col-md-6">
+                                  <label>Date of Birth</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <p>dob</p>
+                              </div>
+                      </div>
+  
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label>Qualification</label>
+                          </div>
+                          <div class="col-md-6">
+                              <p>quality</p>
+                          </div>
+                      </div>
+  
+  
+                      <div class="row">
+                          <div class="col-md-6">
+                              <label>Address</label>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group" [class.has-error]="Address.invalid && Address.touched" [class.has-success]="Address.valid">
+                                  <input type="text" class="form-control" [(ngModel)]="form.address" name="address" #Address="ngModel" required> 
+                                  
+                                  <span class="help-block" *ngIf="Address.invalid && Address.touched">
+                                      Required
+                                  </span>
+                                  
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="row">
+                              <div class="col-md-6">
+                                  <label><b>Change the password</b></label><br><br>
+                              </div>
+                              <div class="col-md-6">
+                                  
+                              </div>
+                      </div>
+                      
+                      <div class="row">
+                              <div class="col-md-6">
+                                  <label>Current password</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group" [class.has-error]="currentPassword.invalid && currentPassword.touched" [class.has-success]="currentPassword.valid">
+                                      <input type="password" class="form-control" [(ngModel)]="form.currentpassword" name="currentpassword" #currentPassword="ngModel" required> 
+                                      
+                                      <span class="help-block" *ngIf="currentPassword.invalid && currentPassword.touched">
+                                          Required
+                                      </span>
+                                      
+                                  </div>
+                              </div>
+                      </div>
+  
+                      <div class="row">
+                              <div class="col-md-6">
+                                  <label>New password</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group" [class.has-error]="newPassword.invalid && newPassword.touched" [class.has-success]="newPassword.valid">
+                                      <input type="password" class="form-control" [(ngModel)]="form.newpassword" name="newpassword" #newPassword="ngModel" required> 
+                                      
+                                      <span class="help-block" *ngIf="newPassword.invalid && newPassword.touched">
+                                          Required
+                                      </span>
+                                      
+                                  </div>
+                              </div>
+                      </div>
+  
+                      <div class="row">
+                              <div class="col-md-6">
+                                  <label>Re enter New password</label>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group" [class.has-error]="renewPassword.invalid && renewPassword.touched" [class.has-success]="renewPassword.valid">
+                                      <input type="password" class="form-control" [(ngModel)]="form.renewpassword" name="renewpassword" #renewPassword="ngModel" required> 
+                                      
+                                      <span class="help-block" *ngIf="renewPassword.invalid && renewPassword.touched">
+                                          Required
+                                      </span>
+                                      
+                                  </div>
+                              </div>
+                      </div>
+  
+                     
+  
+  
+  
+                   
+                      
+                       
+                    
+                </div>
+            </div><br>
+            
+            
+                  
+          <div class="row" style="padding-left: 619px;">
+            <label style="padding-right: 5px;"><button class="btn btn-primary" [disabled]="f.invalid"> Save Changes </button></label>
+            <label><button class="btn btn-secondary" routerLink="/adminprof"> Cancel </button></label>
+          </div>
+          <div *ngIf="">
+              <div class="has-error">
+                  
+              </div>
+          </div>
+          <hr>
+              
+        </form>  
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+                  
+    <app-footeral></app-footeral>       
+    </body>

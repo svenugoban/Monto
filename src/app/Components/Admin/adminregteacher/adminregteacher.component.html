@@ -1,0 +1,109 @@
+<app-admintop></app-admintop>
+
+
+<body>
+<br><br><br><br>
+
+    <div class="fbgcolor">
+  
+        <form #f="ngForm" (ngSubmit)="onregisterform(f)">
+          <h2 style="text-align: center">Register a New Teacher</h2><br>
+  
+  
+              <div class="form-group" [class.has-error]="teacherId.invalid && teacherId.touched" [class.has-success]="teacherId.valid">
+                <label for = "teacher-id">Teacher Id</label>
+                <input type="text" class="form-control" [(ngModel)]="form.teacherid" name="teacherid" #teacherId="ngModel" required>
+                <div class="help-block" *ngIf="teacherId.invalid && teacherId.touched">
+                  Teacher Id is required
+                </div>
+              </div>
+  
+              
+              <div class="form-group" [class.has-error]="teacherName.invalid && teacherName.touched" [class.has-success]="teacherName.valid">
+                  <label for = "teacher-name">Teacher Name</label>
+                  <input type="text" class="form-control" [(ngModel)]="form.teachername" name="teachername" #teacherName="ngModel" required>
+                  <div class="help-block" *ngIf="teacherName.invalid && teacherName.touched">
+                      Teacher Name is required
+                    </div>
+              </div>
+  
+              <div class="form-group" [class.has-error]="address.invalid && address.touched" [class.has-success]="address.valid">
+                  <label for = "address">Address</label>
+                  <input type="text" class="form-control" [(ngModel)]="form.address" name="address" #address="ngModel" required>
+                  <div class="help-block" *ngIf="address.invalid && address.touched">
+                      Address is required
+                    </div>
+              </div>
+  
+              <div class="row">
+                <div class="form-group col-md-3" [class.has-error]="DOB.invalid && DOB.touched" [class.has-success]="DOB.valid">
+                    <label for = "dob">Date of Birth</label>
+                    <input type="text" class="form-control" id="DateofBirth" [(ngModel)]="form.dob" name="dob" #DOB="ngModel" bsDatepicker [bsConfig] = "datePickerConfig" placement="right" required>
+                    <div class="help-block" *ngIf="DOB.invalid && DOB.touched">
+                        Date of birth is required
+                      </div>
+                </div>
+              </div>
+           
+              <div class="form-group" [class.has-error]="Gender.invalid && Gender.touched" [class.has-success]="Gender.valid">
+                  <label for="gender">Gender</label><br>
+                  <label style="font-weight: 300;padding-left: 50px" class="radio-inline">
+                    <input type="radio" value="male" [(ngModel)]="form.sex" name="sex" #Gender="ngModel" required> Male
+                  </label>
+                  <label style="font-weight: 300;padding-left: 50px" class="radio-inline">
+                      <input type="radio" value="Female" [(ngModel)]="form.sex" name="sex" required> Female
+                  </label>
+                 <div class="help-block" *ngIf="Gender.invalid && Gender.touched">
+                   Gender is required
+                </div>
+              </div>
+
+              <div class="form-group" [class.has-error]="Qualification.invalid && Qualification.touched" [class.has-success]="Qualification.valid">
+                  <label for = "address">Qualification</label>
+                  <input type="text" class="form-control" [(ngModel)]="form.qualification" name="qualification" #Qualification="ngModel" required>
+                  <div class="help-block" *ngIf="Qualification.invalid && Qualification.touched">
+                      Address is required
+                    </div>
+              </div>
+  
+              <button class="btn btn-info" [disabled]="f.invalid">Create</button>
+        </form>
+    </div>
+  
+  
+
+
+ 
+       
+       
+          
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Sucessfully Registered !</h5>
+                </div>
+                <div class="modal-body"><br>
+                  <P>Teacher details Stored</P>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+    
+  
+  
+  <app-footeral></app-footeral>
+  </body>

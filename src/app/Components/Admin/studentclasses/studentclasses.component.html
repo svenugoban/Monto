@@ -1,0 +1,108 @@
+<app-admintop></app-admintop>
+
+<body>
+  <br><br><br><br>
+
+
+  <h2 style="text-align: center">Classes with Students</h2><br>
+
+
+
+
+  <div *ngFor="let c of classes">
+      <div style="padding-left: 200px;padding-right: 200px">
+          
+          <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <span class="row" style="padding: 10px;">
+                      <img class="img-thumbnail img1" src="assets\img\classroom.jpg">
+                      <span class="studentName" style="padding-left: 40px">
+
+                        <div class="row">
+                            <div class="col-sm">
+                                <br>
+                                <label style="color: cadetblue;">{{c}} </label>
+
+                                <hr>
+
+                                
+                                <div *ngFor="let cl of classlist">
+                                    <p *ngIf="c == cl.classname" style="padding-left: 800px; color: blue;" ></p>
+                                    <div *ngIf="c == cl.classname" style="padding-left: 300px;">
+                                    {{cl.studentname}} <br>
+                                    </div>
+
+                                </div>
+                                
+                            </div>
+                            <div>
+                                <br><br>
+                            
+                            
+                            
+                            </div>
+                        </div>
+                    
+
+                      </span>
+
+                      <span>
+                          
+                      </span>
+
+                      
+                  
+                  </span>
+
+
+                  <span>
+
+                    
+                    
+
+
+                  </span>
+                  
+                 
+              </li>
+
+
+
+
+          </ul>
+
+          
+          
+              
+
+
+              
+      </div>
+  </div>
+
+  
+  
+  
+  
+  
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+
+<app-footeral></app-footeral>          
+
+
+
+
+
+
+
+</body>

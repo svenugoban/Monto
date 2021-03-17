@@ -1,0 +1,49 @@
+<body>
+    <header>
+            <div class="row">
+                <div class="col-lg-3 logo " >
+                    <img src="assets\img\Logo.png">  
+                </div>
+                <div class="col-lg-9 butt">
+                    <a routerLink="/signup"><button type="button" class="btn btn-primary" >Sign up</button></a>
+                </div>
+            </div>
+    </header>
+
+
+  <form #f="ngForm" (ngSubmit)="onloginform(f)">
+   
+    <div class="fbgcolor">
+    <br>
+     <div class="form-group"  [class.has-error]="userName.invalid && userName.touched" [class.has-success]="userName.valid">
+         <label for="user-name">User Name</label>
+         <input type="text" class="form-control" [(ngModel)]="form.username" name="username" #userName = "ngModel" required>
+         
+    </div>
+
+    <div class="form-group" [class.has-error]="Password.invalid && Password.touched" [class.has-success]="Password.valid">
+         <label for="pwd">Password</label>
+         <input type="password" class="form-control" [(ngModel)]="form.password" name="password" #Password = "ngModel" required>
+         
+    </div>
+
+     <button class="btn btn-success" [disabled]="f.invalid">Login</button>
+     <div *ngIf="invalidLogin">
+         <div class="has-error">
+            {{message}}
+         </div>
+     </div>
+    
+       
+  </div>
+  </form>
+
+
+
+
+
+
+
+
+
+</body>

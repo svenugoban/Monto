@@ -1,0 +1,148 @@
+<app-teachtop></app-teachtop>
+
+
+
+<body>
+  <br><br><br><br>
+  <div class="fbgcolor">
+
+    
+
+      <form #f="ngForm" (ngSubmit)="onregisterform(f)" name="form" id="regform">
+        <h2 style="text-align: center">Register a new Student</h2><br>
+
+        
+
+
+            <div class="form-group" [class.has-error]="studentId.invalid && studentId.touched" [class.has-success]="studentId.valid">
+              <label for = "student-id">Student Id</label>
+              <input type="text" class="form-control" [(ngModel)]="form.studentid" name="studentid" #studentId="ngModel" required>
+              <div class="help-block" *ngIf="studentId.invalid && studentId.touched">
+                Student Id is required
+              </div>
+            </div>
+
+            
+            <div class="form-group" [class.has-error]="studentName.invalid && studentName.touched" [class.has-success]="studentName.valid">
+                <label for = "student-name">Student Name</label>
+                <input type="text" class="form-control" [(ngModel)]="form.studentname" name="studentname" #studentName="ngModel" required>
+                <div class="help-block" *ngIf="studentName.invalid && studentName.touched">
+                    Student Name is required
+                  </div>
+            </div>
+
+            <div class="form-group" [class.has-error]="address.invalid && address.touched" [class.has-success]="address.valid">
+                <label for = "address">Address</label>
+                <input type="text" class="form-control" [(ngModel)]="form.address" name="address" #address="ngModel" required>
+                <div class="help-block" *ngIf="address.invalid && address.touched">
+                    Address is required
+                  </div>
+            </div>
+
+            <div class="row">
+              <div class="form-group col-md-3" [class.has-error]="DOB.invalid && DOB.touched" [class.has-success]="DOB.valid">
+                  <label for = "dob">Date of Birth</label>
+                  <input type="text" class="form-control" id="DateofBirth" [(ngModel)]="form.dob" name="dob" #DOB="ngModel" bsDatepicker [bsConfig] = "datePickerConfig" placement = "right" required>
+                  <div class="help-block" *ngIf="DOB.invalid && DOB.touched">
+                      Date of birth is required
+                    </div>
+              </div>
+            </div>
+
+            <div class="form-group" [class.has-error]="Gender.invalid && Gender.touched" [class.has-success]="Gender.valid">
+                <label for="gender">Gender</label><br>
+                <label style="font-weight: 300;padding-left: 50px" class="radio-inline">
+                  <input type="radio" value="male" [(ngModel)]="form.sex" name="sex" #Gender="ngModel" required> Male
+                </label>
+                <label style="font-weight: 300;padding-left: 50px" class="radio-inline">
+                    <input type="radio" value="Female" [(ngModel)]="form.sex" name="sex" required> Female
+                </label>
+               <div class="help-block" *ngIf="Gender.invalid && Gender.touched">
+                 Gender is required
+              </div>
+            </div>
+
+            <div class="row">
+                <button  class="btn btn-info" [disabled]="f.invalid" >Create </button>
+                <div class="col">
+
+                </div>
+                <div class="col-md-7">
+                  <div *ngIf="validregister">
+                    <a routerLink="/generatemodal" data-target="#exampleModalCenter" data-toggle="modal">
+                      <span class="badge badge-success">
+                        Generate code
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+            </div>
+            
+            <div *ngIf="invalidregister">
+              <div class="has-error">
+                {{message}}
+              </div>
+            </div>
+
+            
+        
+      </form>
+
+   
+
+  </div>
+
+  
+
+
+  
+
+
+  
+        
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Sucessfully Registered !</h5>
+                  
+               
+              </div>
+              <div class="modal-body">
+                <br>
+
+                <label>
+                  <p>Parent Generate code : </p>
+                  <input type="text" value={{objectid}}  size="40px"><br><br>
+                  Copy this generate code use this when parent Signup
+
+                </label>
+
+
+                <br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="display()">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  
+
+
+
+
+
+
+
+
+
+<app-footeral></app-footeral>
+</body>
+
+
+    
+    
+ 
